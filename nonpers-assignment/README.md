@@ -88,6 +88,18 @@ To help you see if your output is correct, we have provided the following exampl
 | 2959 | *Fight Club* | 4.259 | 4.252 |
 | 1203 | *12 Angry Men* | 4.246 | 4.227 |
 
+### Outputs after program run
+#### Mean Based Top 10 Recommendations
+<p align="center">
+<img src="https://github.com/haseefathi/Recommender-Systems/blob/master/nonpers-assignment/images/mean-output.png"  width="350" height="200" />
+  </p>
+ 
+ #### Damped Mean Based Top 10 Recommmendations
+ <p align="center">
+<img src="https://github.com/haseefathi/Recommender-Systems/blob/master/nonpers-assignment/images/damped-mean-output.png"  width="350" height="200" />
+  </p>
+  
+
 ## Association Rules
 
 In the second part of the assignment, you will implement two versions of an association rule
