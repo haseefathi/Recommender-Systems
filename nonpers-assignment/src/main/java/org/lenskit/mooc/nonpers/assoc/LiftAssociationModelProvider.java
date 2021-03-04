@@ -40,14 +40,14 @@ public class LiftAssociationModelProvider implements Provider<AssociationModel> 
 
         // Open a stream, grouping ratings by item ID
         try (ObjectStream<IdBox<List<Rating>>> ratingStream = dao.query(Rating.class)
-                                                                 .groupBy(CommonAttributes.ITEM_ID)
-                                                                 .stream()) {
+                .groupBy(CommonAttributes.ITEM_ID)
+                .stream()) {
             // Process each item's ratings
-            for (IdBox<List<Rating>> item: ratingStream) {
+            for (IdBox<List<Rating>> item : ratingStream) {
                 // Build a set of users.  We build an array first, then convert to a set.
                 LongList users = new LongArrayList();
                 // Add each rating's user ID to the user sets
-                for (Rating r: item.getValue()) {
+                for (Rating r : item.getValue()) {
                     long user = r.getUserId();
                     users.add(user);
                     allUsers.add(user);
@@ -65,14 +65,35 @@ public class LiftAssociationModelProvider implements Provider<AssociationModel> 
 
 
         // then loop over 'x' items
-        for (Long2ObjectMap.Entry<LongSortedSet> xEntry: itemUsers.long2ObjectEntrySet()) {
+        for (Long2ObjectMap.Entry<LongSortedSet> xEntry : itemUsers.long2ObjectEntrySet()) {
             long xId = xEntry.getLongKey();
             LongSortedSet xUsers = xEntry.getValue();
 
             // set up a map to hold the scores for each 'y' item
             Long2DoubleMap itemScores = new Long2DoubleOpenHashMap();
 
+            long countXandY = 0;
             // TODO Compute lift association formulas for all other 'Y' items with respect to this 'X'
+
+            for (Long2ObjectMap.Entry<LongSortedSet> yEntry : itemUsers.long2ObjectEntrySet()) {
+                long yId = yEntry.getLongKey();
+                LongSortedSet yUsers = yEntry.getValue();
+
+                // TODO Compute P(Y & X) / P(X) and store in itemScores
+                for (long yUser : yUsers) {
+                    if (xUsers.contains(yUser)) {
+                        countXandY++;
+                    }
+                }
+                float countXUsers = xUsers.size();
+                float countYUsers = yUsers.size();
+                float pXandY = (float) countXandY;
+                float probability = (pXandY * allUsers.size()) / (countXUsers * countYUsers);
+                itemScores.put(yId, probability);
+
+                countXandY = 0;
+            }
+
 
             // save the score map to the main map
             assocMatrix.put(xId, itemScores);

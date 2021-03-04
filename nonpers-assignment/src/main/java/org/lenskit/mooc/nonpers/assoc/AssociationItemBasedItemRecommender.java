@@ -11,9 +11,7 @@ import org.slf4j.LoggerFactory;
 
 import javax.annotation.Nullable;
 import javax.inject.Inject;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
 
 /**
  * An item-based item scorer that uses association rules.
@@ -58,8 +56,9 @@ public class AssociationItemBasedItemRecommender extends AbstractItemBasedItemRe
 
     /**
      * Recommend items with an association rule.
-     * @param n The number of recommendations to produce.
-     * @param refItem The reference item.
+     *
+     * @param n          The number of recommendations to produce.
+     * @param refItem    The reference item.
      * @param candidates The candidate items (set of items that can possibly be recommended).
      * @return The list of results.
      */
@@ -67,7 +66,34 @@ public class AssociationItemBasedItemRecommender extends AbstractItemBasedItemRe
         List<Result> results = new ArrayList<>();
 
         // TODO Compute the n highest-scoring items from candidates
+        Iterator iterator = candidates.iterator();
+        while (iterator.hasNext()) {
+            long itemID = (long) iterator.next();
+            if (model.hasItem(itemID)) {
+                double value = model.getItemAssociation(refItem, itemID);
+                Result result = Results.create(itemID, value);
+                results.add(result);
+            }
+        }
 
-        return Results.newResultList(results);
+        Comparator<Result> c = new Comparator<Result>() {
+            @Override
+            public int compare(Result r1, Result r2) {
+                if (r1.getScore() > r2.getScore()) {
+                    return -1;
+                } else if (r1.getScore() == r2.getScore()) {
+                    return 0;
+                } else {
+                    return 1;
+                }
+
+            }
+        };
+
+        results.sort(c);
+        if (n < 0) {
+            return Results.newResultList(results);
+        }
+        return Results.newResultList(results.subList(0, n));
     }
 }

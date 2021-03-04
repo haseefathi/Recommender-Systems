@@ -86,7 +86,9 @@ public class ItemMeanModelProvider implements Provider<ItemMeanModel> {
             double ratingCount = movieCounts.get(movieId);
             double avg = sumOfAllRatings / ratingCount;
 
-            means.put(movieId, avg);
+
+            if (ratingCount > 0)
+                means.put(movieId, avg);
 
         }
 
