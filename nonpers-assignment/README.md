@@ -151,10 +151,10 @@ $$s(i|j) = \frac{P(j \wedge i)}{P(i) P(j)}$$
 ### Outputs after program run
 #### Basic Association Output
 <p align="center">
-<img src="https://github.com/haseefathi/Recommender-Systems/blob/master/nonpers-assignment/images/basic-assoc-output.png"  width="350" height="200" />
+<img src="https://github.com/haseefathi/Recommender-Systems/blob/master/nonpers-assignment/images/basic-assoc-output.png"  width="600" height="200" />
   </p>
  
  #### Lift Association Output
  <p align="center">
-<img src="https://github.com/haseefathi/Recommender-Systems/blob/master/nonpers-assignment/images/lift-assoc-output.png"  width="350" height="200" />
+<img src="https://github.com/haseefathi/Recommender-Systems/blob/master/nonpers-assignment/images/lift-assoc-output.png"  width="450" height="200" />
   </p>
