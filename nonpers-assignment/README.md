@@ -148,81 +148,13 @@ much more likely someone is to rate a movie $i$ when they have rated $j$ than th
 
 $$s(i|j) = \frac{P(j \wedge i)}{P(i) P(j)}$$
 
-### Example Outputs
-
-Following is the correct output for the basic association rules with reference item 260 (*Star Wars*), as generated with `./gradlew runBasicAssoc -PreferenceItemm=260`:
-
-    2571 (Matrix, The (1999)): 0.916
-    1196 (Star Wars: Episode V - The Empire Strikes Back (1980)): 0.899
-    4993 (Lord of the Rings: The Fellowship of the Ring, The (2001)): 0.892
-    1210 (Star Wars: Episode VI - Return of the Jedi (1983)): 0.847
-    356 (Forrest Gump (1994)): 0.843
-    5952 (Lord of the Rings: The Two Towers, The (2002)): 0.841
-    7153 (Lord of the Rings: The Return of the King, The (2003)): 0.830
-    296 (Pulp Fiction (1994)): 0.828
-    1198 (Raiders of the Lost Ark (Indiana Jones and the Raiders of the Lost Ark) (1981)): 0.791
-    480 (Jurassic Park (1993)): 0.789
-
-And lift-based association rules for item 2761 (*The Iron Giant*):
-
-    631 (All Dogs Go to Heaven 2 (1996)): 4.898
-    2532 (Conquest of the Planet of the Apes (1972)): 4.810
-    3615 (Dinosaur (2000)): 4.546
-    1649 (Fast, Cheap & Out of Control (1997)): 4.490
-    340 (War, The (1994)): 4.490
-    1016 (Shaggy Dog, The (1959)): 4.490
-    2439 (Affliction (1997)): 4.490
-    332 (Village of the Damned (1995)): 4.377
-    2736 (Brighton Beach Memoirs (1986)): 4.329
-    3213 (Batman: Mask of the Phantasm (1993)): 4.317
-
-## Running your code
-
-The Gradle build file we have provided is set up to automatically run all four of your recommenders.
-The following Gradle targets will do this:
-
-- `runMean` runs the raw mean recommender
-- `runDampedMean` runs the damped mean recommender
-- `runBasicAssoc` runs the basic association rule recommender
-- `runLiftAssoc` runs the advanced (lift-based) association rule recommender
-
-You can run these using the IntelliJ Gradle runner (open the Gradle panel, browse the tree to find
-a task, and double-click it), or from the command line:
-
-    ./gradlew runMean
-
-The association rule recommenders can also take the reference item ID on the command line as a
-`referenceItem` parameter.  For example:
-
-    ./gradlew runLiftAssoc -PreferenceItem=1
-
-The IntelliJ ‘Run Configuration’ dialog will allow you to specify additional ‘script parameters’ to
-the Gradle invocation.
-
-### Debugging
-
-If you run the Gradle tasks using IntelliJ's Gradle runner, you can run them under the debugger to debug your code.
-
-The Gradle file also configures LensKit to write log output to log files under the `build`
-directory.  If you use the SLF4J logger (the `logger` field on the classes we provide) to emit debug
-messages, you can find them there when you run one of the recommender tasks such as `runDampedMean`.
-
-## Submitting
-
-You will submit a compiled `jar` file containing your solution.  To prepare your project for
-submission, run the Gradle `prepareSubmission` task:
-
-    ./gradlew prepareSubmission
-
-This will create file `nonpers-submission.jar` under `build/distributions` that contains your final
-solution code in a format the grader will understand.  Upload this `jar` file to the Coursera
-assignment grader.
-
-## Grading
-
-Your grade for each part will be based on two components:
-
-- Outputting items in the correct order: 75%
-- Computing correct scores for items (within an error tolerance): 25%
-
-The parts themselves are weighted equally.
+### Outputs after program run
+#### Basic Association Output
+<p align="center">
+<img src="https://github.com/haseefathi/Recommender-Systems/blob/master/nonpers-assignment/images/basic-assoc-output.png"  width="600" height="200" />
+  </p>
+ 
+ #### Lift Association Output
+ <p align="center">
+<img src="https://github.com/haseefathi/Recommender-Systems/blob/master/nonpers-assignment/images/lift-assoc-output.png"  width="450" height="200" />
+  </p>
