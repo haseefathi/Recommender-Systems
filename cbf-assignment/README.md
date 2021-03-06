@@ -130,23 +130,11 @@ Item 2231 has the following final term vector:
      John Dahl=0.1141651377329722
      watched 2006=0.061105276598972115}
 
-### Example Output for Unweighted User Profile
+### Unweighted User Profile Output
 
-The following example gives actual outputs for user 320 in the data set. It was executed using `./gradlew recommendBasic -PuserId=320` in a Unix-like console.
-
-```
-recommendations for user 320:
-  32 (Twelve Monkeys (a.k.a. 12 Monkeys) (1995)): 0.349
-  1748 (Dark City (1998)): 0.307
-  1206 (Clockwork Orange, A (1971)): 0.298
-  48394 (Pan's Labyrinth (Laberinto del fauno, El) (2006)): 0.288
-  1199 (Brazil (1985)): 0.288
-  32587 (Sin City (2005)): 0.287
-  1270 (Back to the Future (1985)): 0.283
-  1089 (Reservoir Dogs (1992)): 0.278
-  1210 (Star Wars: Episode VI - Return of the Jedi (1983)): 0.277
-  7147 (Big Fish (2003)): 0.264
-```
+<p align = "center">
+    <img src="https://github.com/haseefathi/Recommender-Systems/blob/master/cbf-assignment/images/unweighted-profile-output.png" width="450" height="200" />
+</p>
 
 ## Part 2: Weighted User Profile
 
@@ -162,59 +150,8 @@ $$p_{ut} = \sum_{i \in I(u)} (r_{ui} - \mu_u) q_{it}$$
 
 If an item $i$ has no data for a tag $t$, then $q_{it} = 0$.
 
-### Example Output for Weighted User Profile
+### Weighted User Profile Output
 
-The following example gives actual outputs for user 320 in the data set. It was executed using `./gradlew recommendWeighted -PuserId=320` in a Unix-like console.
-
-```
-recommendations for user 320:
-  48394 (Pan's Labyrinth (Laberinto del fauno, El) (2006)): 0.204
-  7153 (Lord of the Rings: The Return of the King, The (2003)): 0.184
-  1210 (Star Wars: Episode VI - Return of the Jedi (1983)): 0.178
-  628 (Primal Fear (1996)): 0.177
-  2997 (Being John Malkovich (1999)): 0.176
-  1089 (Reservoir Dogs (1992)): 0.165
-  7147 (Big Fish (2003)): 0.161
-  32587 (Sin City (2005)): 0.160
-  48780 (Prestige, The (2006)): 0.160
-  1199 (Brazil (1985)): 0.155
-```
-
-## Running the Program
-
-We have provided two Gradle targets to help you run the program. `recommendBasic` computes recommendations using the threshold user profile builder, and `recommendWeighted` uses the weighted user profile builder.  You can users to recommend for with the `userId` property, e.g. `-PuserId=91`.
-
-For example:
-
-```
-$ ./gradlew recommendBasic -PuserId=91
-```
-
-### Debugging
-
-If you run the Gradle tasks using IntelliJ's Gradle runner, you can run them under the debugger to debug your code.
-
-The Gradle file also configures LensKit to write log output to `build/recommend-basic.log` and `build/recommend-weighted.log`.  If you use the SLF4J logger (the `logger` field on the classes we provide) to emit debug messages, you can find them there.
-
-## Submitting
-
-You will submit a compiled `jar` file containing your solution.  To prepare your project for
-submission, run the Gradle `prepareSubmission` task:
-
-    ./gradlew prepareSubmission
-
-This will create file `cbf-submission.jar` under `build/distributions` that contains your final
-solution code in a format the grader will understand.  Upload this `jar` file to the Coursera
-assignment grader.
-
-## Grading
-
-Your grade for each part will be based on two components:
-
-- Outputting items in the correct order: 75%
-- Computing correct scores for items (within an error tolerance): 25%
-
-The parts themselves are weighted as follows:
-
-- Basic CBF: 70%
-- CBF with Weighted User Profiles: 30%
+<p align = "center">
+    <img src="https://github.com/haseefathi/Recommender-Systems/blob/master/cbf-assignment/images/weighted-profile-output.png" width="450" height="200" />
+</p>
