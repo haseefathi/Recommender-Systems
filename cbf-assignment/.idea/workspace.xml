@@ -73,7 +73,7 @@
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
     <property name="show.unlinked.gradle.project.popup" value="true" />
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Gradle.cbf-assignment [recommendBasic]">
     <configuration name="&lt;template&gt;" type="TestNG" default="true" selected="false">
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
@@ -103,6 +103,25 @@
       <GradleScriptDebugEnabled>true</GradleScriptDebugEnabled>
       <method v="2" />
     </configuration>
+    <configuration name="cbf-assignment [recommendWeighted]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="recommendWeighted" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <GradleScriptDebugEnabled>true</GradleScriptDebugEnabled>
+      <method v="2" />
+    </configuration>
     <configuration default="true" type="JUnit" factoryName="JUnit">
       <option name="TEST_OBJECT" value="class" />
       <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
@@ -112,27 +131,28 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Gradle.cbf-assignment [recommendWeighted]" />
         <item itemvalue="Gradle.cbf-assignment [recommendBasic]" />
       </list>
     </recent_temporary>
   </component>
   <component name="WindowStateProjectService">
-    <state width="1227" height="19" key="GridCell.Tab.0.bottom" timestamp="1615032679071">
+    <state width="1227" height="54" key="GridCell.Tab.0.bottom" timestamp="1615032701805">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1227" height="19" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1615032679071" />
-    <state width="1227" height="19" key="GridCell.Tab.0.center" timestamp="1615032679071">
+    <state width="1227" height="54" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1615032701805" />
+    <state width="1227" height="54" key="GridCell.Tab.0.center" timestamp="1615032701805">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1227" height="19" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1615032679071" />
-    <state width="1227" height="19" key="GridCell.Tab.0.left" timestamp="1615032679071">
+    <state width="1227" height="54" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1615032701805" />
+    <state width="1227" height="54" key="GridCell.Tab.0.left" timestamp="1615032701805">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1227" height="19" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1615032679071" />
-    <state width="1227" height="19" key="GridCell.Tab.0.right" timestamp="1615032679071">
+    <state width="1227" height="54" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1615032701805" />
+    <state width="1227" height="54" key="GridCell.Tab.0.right" timestamp="1615032701805">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1227" height="19" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1615032679071" />
+    <state width="1227" height="54" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1615032701805" />
     <state x="0" y="0" key="SettingsEditor" timestamp="1614950571237">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
